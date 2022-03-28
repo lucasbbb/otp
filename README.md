@@ -58,7 +58,7 @@ func QRImage(w http.ResponseWriter, req *http.Request) {
 
 4. User scan the QR code with Google Authenticator or other apps.
 
-![Google Authenticator](https://github.com/lucasbbb/otp/docs/google.PNG)
+![Google Authenticator](https://github.com/lucasbbb/otp/raw/main/docs/google.PNG)
 
 5. Compare the code with the sever generated code.
 
