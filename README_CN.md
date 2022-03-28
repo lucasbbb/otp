@@ -58,7 +58,7 @@ func QRImage(w http.ResponseWriter, req *http.Request) {
 
 4. 用户可以通过 Google Authenticator 或者其他的 App 来扫码
 
-![Google Authenticator](https://github.com/lucasbbb/otp/docs/google.PNG)
+![Google Authenticator](https://github.com/lucasbbb/otp/raw/main/docs/google.PNG)
 
 5. 对比用户输入的 Code 是否和服务端生成的一致
 
