@@ -127,25 +127,34 @@ func ParseFromURL(rawURL string) (*Key, error) {
 }
 
 func (k *Key) RawURL() string {
-	if k.rawURL == "" {
-		var u url.URL
-		u.Scheme = "otpauth"
-		u.Host = k.Typ
-		u.Path = fmt.Sprintf("%s:%s", k.Issuer, k.Account)
-		query := u.Query()
-		query.Add("issuer", k.Issuer)
-		query.Add("secret", base32.StdEncoding.WithPadding(base32.NoPadding).EncodeToString(k.Secret))
-		query.Add("digits", strconv.Itoa(k.Digits))
-		query.Add("algorithm", k.Algorithm)
-		if k.Typ == "hotp" {
-			query.Add("counter", strconv.FormatUint(k.Counter, 10))
-		}
-		if k.Typ == "totp" {
-			query.Add("period", strconv.Itoa(k.Period))
-		}
-		u.RawQuery = query.Encode()
-		k.rawURL = u.String()
+	if k.rawURL != "" {
+		return k.rawURL
 	}
+	var u url.URL
+	u.Scheme = "otpauth"
+	u.Host = k.Typ
+	u.Path = fmt.Sprintf("%s:%s", k.Issuer, k.Account)
+
+	query := u.Query()
+	query.Add("issuer", k.Issuer)
+	query.Add("secret", base32.StdEncoding.WithPadding(base32.NoPadding).EncodeToString(k.Secret))
+
+	k.Digits = condition.IntIf(k.Digits == 0, 6, k.Digits)
+	query.Add("digits", strconv.Itoa(k.Digits))
+
+	k.Algorithm = condition.StringIf(k.Algorithm == "", "SHA1", k.Algorithm)
+	query.Add("algorithm", k.Algorithm)
+
+	if k.Typ == "hotp" {
+		query.Add("counter", strconv.FormatUint(k.Counter, 10))
+	}
+	if k.Typ == "totp" {
+		k.Period = condition.IntIf(k.Period == 0, 30, k.Period)
+		query.Add("period", strconv.Itoa(k.Period))
+	}
+	u.RawQuery = query.Encode()
+	k.rawURL = u.String()
+
 	return k.rawURL
 }
 
