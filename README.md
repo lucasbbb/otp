@@ -1,13 +1,13 @@
 # otp
 One Time Password package for Go/Golang developers
 
-[中文文档](https://github.com/lucasbbb/otp/README_CN.md)
+[中文文档](https://github.com/lucasbbb/otp/blob/main/README_CN.md)
 
 ## Contents
 
 - [Contents](#contents)
-- [What is OTP](#What is OTP)
-- [How to Use](#How to Use)
+- [What is OTP](#What-is-OTP)
+- [How to Use](#How-to-Use)
 
 ## What is OTP
 

@@ -1,7 +1,7 @@
 # otp
 OTP 工具包，实现了 HTOP 和 TOTP.
 
-[English Document](https://github.com/lucasbbb/otp/README.md)
+[English Document](https://github.com/lucasbbb/otp/blob/main/README.md)
 
 ## 目录
 
