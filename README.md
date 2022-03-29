@@ -1,6 +1,14 @@
 # otp
 One Time Password package for Go/Golang developers
 
+[![Build Status](https://github.com/lucasbbb/otp/actions/workflows/default.yml/badge.svg?branch=main)](https://github.com/lucasbbb/otp/actions/?query=branch%3Amain)
+[![codecov](https://codecov.io/gh/lucasbbb/otp/branch/main/graph/badge.svg?token=aI9SkL0wAR)](https://codecov.io/gh/lucasbbb/otp)
+[![Go Report Card](https://goreportcard.com/badge/github.com/lucasbbb/otp)](https://goreportcard.com/report/github.com/lucasbbb/otp)
+[![GoDoc](https://pkg.go.dev/badge/github.com/lucasbbb/otp?status.svg)](https://pkg.go.dev/github.com/lucasbbb/otp?tab=doc)
+[![Open Source Helpers](https://www.codetriage.com/lucasbbb/otp/badges/users.svg)](https://www.codetriage.com/lucasbbb/otp)
+[![Sourcegraph](https://sourcegraph.com/github.com/lucasbbb/otp/-/badge.svg)](https://sourcegraph.com/github.com/lucasbbb/otp?badge)
+[![Release](https://img.shields.io/github/v/release/lucasbbb/otp.svg?style=flat-square)](https://github.com/lucasbbb/otp/releases)
+
 [中文文档](https://github.com/lucasbbb/otp/blob/main/README_CN.md)
 
 ## Contents
